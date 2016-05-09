@@ -42,8 +42,17 @@ namespace MultimapByJohn
             }
             return false;
         }
+        
+        public HashSet<ValueType> getValueSetByKey(KeyType key)
+        {
+            if (multimap.ContainsKey(key))
+            {
+                return (HashSet<ValueType>)multimap[key];
+            }
+            return null;
+        }
 
-        public String ToString()
+        public override String ToString()
         {
             String str = "";
             foreach(KeyType key in multimap.Keys)
